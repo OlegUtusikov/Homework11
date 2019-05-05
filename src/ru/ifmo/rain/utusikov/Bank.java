@@ -1,5 +1,4 @@
-package rmi;
-
+package ru.ifmo.rain.utusikov;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 

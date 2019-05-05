@@ -1,4 +1,4 @@
-package rmi;
+package ru.ifmo.rain.utusikov;
 
 import java.rmi.*;
 import java.rmi.server.*;
