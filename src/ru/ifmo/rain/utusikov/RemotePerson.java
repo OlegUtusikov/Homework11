@@ -9,7 +9,7 @@ public class RemotePerson extends NormalPerson {
         super(name, surname, passport);
     }
 
-    public Account getAccount(final String id, final Bank bank) {
+    public synchronized Account getAccount(final String id, final Bank bank) throws RemoteException {
         final String ID = this.getPassport() + ":" + id;
         try {
             Account account = bank.getAccount(ID);
@@ -24,7 +24,7 @@ public class RemotePerson extends NormalPerson {
         }
     }
 
-    private Account saveAccount(final String id, final Bank bank) {
+    private synchronized Account saveAccount(final String id, final Bank bank) throws RemoteException {
         final String ID = this.getPassport() + ":" + id;
         try {
             bank.createAccount(ID);
@@ -35,7 +35,7 @@ public class RemotePerson extends NormalPerson {
         }
     }
 
-    public void changeAccount(final String id, final int delta, final Bank bank) {
+    public synchronized void changeAccount(final String id, final int delta, final Bank bank) throws RemoteException {
         Account account = getAccount(id, bank);
         try {
             account.setAmount(account.getAmount() + delta);

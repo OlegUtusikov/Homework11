@@ -41,13 +41,19 @@ public class PersonClient {
             System.err.println("Can't remote person!");
             return;
         }
+
         if (mod.equals("local") && curPerson != null) {
-            curPerson = new LocalPerson(curPerson.getName(), curPerson.getSurname(), curPerson.getPassport());
+            try {
+                curPerson = new LocalPerson(curPerson.getName(), curPerson.getSurname(), curPerson.getPassport());
+            } catch (RemoteException e) {
+                System.err.println("Error!");
+            }
             System.out.println("local space");
         } else if (mod.equals("local")) {
             System.out.println("Can't create a local user!");
             return;
         }
+
         if (curPerson == null) {
             try {
                 curPerson = bank.savePerson(name, surname, passport);
@@ -55,16 +61,27 @@ public class PersonClient {
                 System.err.println("Can't save a new person with passport " + passport);
             }
         }
-        if (!(curPerson.getName().equals(name) && curPerson.getSurname().equals(surname) && curPerson.getPassport().equals(passport))) {
-            System.out.println("Incorrect information about person with passport " + passport + " inside bank");
+
+        if (curPerson == null) {
+            System.err.println("Mir tlen!");
             return;
         }
-        Account account = curPerson.getAccount(accountId, bank);
+
         try {
-            System.out.println(account.getAmount());
+            if (!(curPerson.getName().equals(name) && curPerson.getSurname().equals(surname) && curPerson.getPassport().equals(passport))) {
+                System.out.println("Incorrect information about person with passport " + passport + " inside bank");
+                return;
+            }
+        } catch (RemoteException e) {
+            System.err.println("Error");
+        }
+
+        try {
+            System.out.println("Account value: " + curPerson.getAccount(accountId, bank).getAmount());
+            System.out.println("Changing...");
             curPerson.changeAccount(accountId, moneyDelta, bank);
-            System.out.println(curPerson.getAccount(accountId, bank).getAmount());
-            System.out.println(account.getAmount());
+            System.out.println("Value in bank: " + bank.getAccount( curPerson.getPassport() + ":" + accountId).getAmount());
+            System.out.println("Value in person: " + curPerson.getAccount(accountId, bank).getAmount());
         } catch (RemoteException e) {
             e.printStackTrace();
         }

@@ -9,7 +9,7 @@ public class Client {
     public static void main(final String... args) throws RemoteException {
         final Bank bank = Utils.get("//localhost/bank");
         if (bank == null) {
-            System.err.println("Error with conecting bank!");
+            System.err.println("Error with connecting bank!");
             return;
         }
         final String accountId = args.length >= 1 ? args[0] : "geo";

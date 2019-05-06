@@ -1,5 +1,7 @@
 package ru.ifmo.rain.utusikov;
 
+import java.rmi.RemoteException;
+
 public  abstract  class NormalPerson implements Person {
     private String name;
     private String surname;
@@ -10,13 +12,13 @@ public  abstract  class NormalPerson implements Person {
         this.passport = passport;
         this.surname = surname;
     }
-    public String getName() {
+    public String getName() throws RemoteException {
         return name;
     }
-    public String getSurname() {
+    public String getSurname() throws RemoteException {
         return surname;
     }
-    public String getPassport() {
+    public String getPassport() throws RemoteException {
         return passport;
     }
 }

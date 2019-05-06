@@ -1,8 +1,9 @@
 package ru.ifmo.rain.utusikov;
 
+import java.io.Serializable;
 import java.rmi.*;
 
-public interface Account extends Remote {
+public interface Account extends Remote, Serializable {
     /** Returns account identifier. */
     String getId() throws RemoteException;
 

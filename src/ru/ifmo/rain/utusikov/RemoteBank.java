@@ -7,10 +7,12 @@ import java.util.concurrent.ConcurrentMap;
 
 public class RemoteBank implements Bank {
     private final int port;
-    private final ConcurrentMap<String, Account> accounts = new ConcurrentHashMap<>();
-    private final ConcurrentMap<String, Person> persons = new ConcurrentHashMap<>();
+    private final ConcurrentMap<String, Account> accounts;
+    private final ConcurrentMap<String, Person> persons;
 
-    public RemoteBank(final int port) {
+    RemoteBank(final int port) {
+        accounts = new ConcurrentHashMap<>();
+        persons = new ConcurrentHashMap<>();
         this.port = port;
     }
 
@@ -40,7 +42,6 @@ public class RemoteBank implements Bank {
         } else {
             return getPerson(passport);
         }
-
     }
 
     public Person getPerson(final String passport) throws RemoteException {
