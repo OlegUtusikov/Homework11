@@ -7,17 +7,11 @@ import java.rmi.RemoteException;
 
 public class Client {
     public static void main(final String... args) throws RemoteException {
-        final Bank bank;
-        try {
-            bank = (Bank) Naming.lookup("//localhost/bank");
-        } catch (final NotBoundException e) {
-            System.out.println("Bank is not bound");
-            return;
-        } catch (final MalformedURLException e) {
-            System.out.println("Bank URL is invalid");
+        final Bank bank = Utils.get("//localhost/bank");
+        if (bank == null) {
+            System.err.println("Error with conecting bank!");
             return;
         }
-
         final String accountId = args.length >= 1 ? args[0] : "geo";
 
         Account account = bank.getAccount(accountId);
@@ -27,6 +21,7 @@ public class Client {
         } else {
             System.out.println("Account already exists");
         }
+
         System.out.println("Account id: " + account.getId());
         System.out.println("Money: " + account.getAmount());
         System.out.println("Adding money");

@@ -1,30 +1,46 @@
 package ru.ifmo.rain.utusikov;
 
-import java.rmi.Remote;
 
-public class RemotePerson implements Person, Remote {
-    private String name;
-    private String surname;
-    private String passport;
+import java.rmi.RemoteException;
 
-    RemotePerson(final String name, final String surname, final String passport) {
-        this.name = name;
-        this.surname = surname;
-        this.passport = passport;
+public class RemotePerson extends NormalPerson {
+
+    RemotePerson(String name, String surname, String passport) {
+        super(name, surname, passport);
     }
 
-    @Override
-    public synchronized String getName() {
-        return name;
+    public Account getAccount(final String id, final Bank bank) {
+        final String ID = this.getPassport() + ":" + id;
+        try {
+            Account account = bank.getAccount(ID);
+            if (account == null) {
+                System.out.println("Saving account!");
+                account = saveAccount(id, bank);
+            }
+            return account;
+        } catch (RemoteException e) {
+            System.err.println("Can't remote account!");
+            return null;
+        }
     }
 
-    @Override
-    public synchronized String getSurname() {
-        return surname;
+    private Account saveAccount(final String id, final Bank bank) {
+        final String ID = this.getPassport() + ":" + id;
+        try {
+            bank.createAccount(ID);
+            return bank.getAccount(ID);
+        } catch (RemoteException e) {
+            System.err.println("Can't save account with id " + ID + "!");
+            return null;
+        }
     }
 
-    @Override
-    public synchronized String getNumberOfPassport() {
-        return passport;
+    public void changeAccount(final String id, final int delta, final Bank bank) {
+        Account account = getAccount(id, bank);
+        try {
+            account.setAmount(account.getAmount() + delta);
+        } catch (RemoteException e) {
+            System.err.println("Couldn't change amount!");
+        }
     }
 }

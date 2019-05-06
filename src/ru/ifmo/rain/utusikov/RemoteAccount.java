@@ -1,5 +1,7 @@
 package ru.ifmo.rain.utusikov;
 
+import java.rmi.RemoteException;
+
 public class RemoteAccount implements Account {
     private final String id;
     private int amount;
@@ -7,6 +9,10 @@ public class RemoteAccount implements Account {
     public RemoteAccount(final String id) {
         this.id = id;
         amount = 0;
+    }
+
+    public RemoteAccount(final Account account) throws RemoteException {
+        this(account.getId());
     }
 
     public String getId() {

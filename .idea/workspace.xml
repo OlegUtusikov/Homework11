@@ -3,7 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="eab57e2e-4d6a-428a-aa7a-b74f67cb4482" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/Bank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/LocalPerson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/LocalPerson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/RemoteAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/RemoteAccount.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/RemoteBank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/RemoteBank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/RemotePerson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/RemotePerson.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,53 +26,24 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/Client.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="11" column="60" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="60" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/init.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/Person.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/LocalPerson.java">
+        <entry file="file://$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/Server.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
+              <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
               <folding>
-                <element signature="e#163#164#0" expanded="true" />
-                <element signature="e#190#191#0" expanded="true" />
-                <element signature="e#238#239#0" expanded="true" />
-                <element signature="e#265#266#0" expanded="true" />
-                <element signature="e#321#322#0" expanded="true" />
-                <element signature="e#348#349#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/PersonClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="125">
+              <caret line="52" column="36" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="36" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -74,34 +52,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/RemotePerson.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+            <state relative-caret-position="196">
+              <caret line="16" column="18" lean-forward="true" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/Client.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="18" column="51" lean-forward="true" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/LocalPerson.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="55" column="16" lean-forward="true" selection-start-line="55" selection-start-column="16" selection-end-line="55" selection-end-column="16" />
               <folding>
-                <element signature="e#153#154#0" expanded="true" />
-                <element signature="e#180#181#0" expanded="true" />
-                <element signature="e#228#229#0" expanded="true" />
-                <element signature="e#255#256#0" expanded="true" />
-                <element signature="e#311#312#0" expanded="true" />
-                <element signature="e#338#339#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/Account.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/RemoteAccount.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -109,24 +82,34 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/RemoteBank.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="29" column="49" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
+            <state relative-caret-position="196">
+              <caret line="38" column="29" lean-forward="true" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
               <folding>
-                <element signature="e#1353#1354#0" expanded="true" />
-                <element signature="e#1379#1380#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#513#514#0" expanded="true" />
+                <element signature="e#545#546#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/Server.java">
+        <entry file="file://$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/Bank.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+            <state relative-caret-position="300">
+              <caret line="20" column="4" lean-forward="true" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/NormalPerson.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="81" lean-forward="true" selection-start-line="7" selection-start-column="81" selection-end-line="7" selection-end-column="81" />
             </state>
           </provider>
         </entry>
@@ -141,6 +124,11 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>RemotePe</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -148,22 +136,26 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/Account.java" />
-        <option value="$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/Bank.java" />
-        <option value="$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/RemoteAccount.java" />
         <option value="$PROJECT_DIR$/runClient.sh" />
         <option value="$PROJECT_DIR$/build.sh" />
         <option value="$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/build.sh" />
         <option value="$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/startServer.sh" />
         <option value="$PROJECT_DIR$/rmiRun.sh" />
+        <option value="$PROJECT_DIR$/init.sh" />
+        <option value="$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/Account.java" />
+        <option value="$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/LocalAccount.java" />
         <option value="$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/Main.java" />
-        <option value="$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/Client.java" />
+        <option value="$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/Utils.java" />
         <option value="$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/Server.java" />
         <option value="$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/Person.java" />
-        <option value="$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/RemoteBank.java" />
-        <option value="$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/LocalPerson.java" />
+        <option value="$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/NormalPerson.java" />
         <option value="$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/RemotePerson.java" />
-        <option value="$PROJECT_DIR$/init.sh" />
+        <option value="$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/RemoteAccount.java" />
+        <option value="$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/LocalPerson.java" />
+        <option value="$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/Bank.java" />
+        <option value="$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/RemoteBank.java" />
+        <option value="$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/PersonClient.java" />
+        <option value="$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/Client.java" />
       </list>
     </option>
   </component>
@@ -184,6 +176,17 @@
             <path>
               <item name="Homework11" type="b2602c69:ProjectViewProjectNode" />
               <item name="Homework11" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Homework11" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Homework11" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Homework11" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Homework11" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="utusikov" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -219,7 +222,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Server">
+  <component name="RunManager" selected="Application.Client1">
     <configuration name="Build" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="12" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -229,11 +232,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Client" type="Application" factoryName="Application">
+    <configuration name="Client1" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="12" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="ru.ifmo.rain.utusikov.Client" />
+      <option name="MAIN_CLASS_NAME" value="ru.ifmo.rain.utusikov.PersonClient" />
       <module name="Homework11" />
+      <option name="PROGRAM_PARAMETERS" value="Oleg Utusikov myId 123312 100 remote" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Client2" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="ru.ifmo.rain.utusikov.PersonClient" />
+      <module name="Homework11" />
+      <option name="PROGRAM_PARAMETERS" value="Oleg Utusikov myId 123312 100 local" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -248,7 +260,8 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Client" />
+      <item itemvalue="Application.Client1" />
+      <item itemvalue="Application.Client2" />
       <item itemvalue="Application.Server" />
       <item itemvalue="Application.Build" />
     </list>
@@ -263,12 +276,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1557049745091</updated>
-      <workItem from="1557049746725" duration="16129000" />
+      <workItem from="1557049746725" duration="37019000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16129000" />
+    <option name="totallyTimeSpent" value="37019000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="43" y="25" width="1397" height="875" extended-state="6" />
@@ -279,7 +292,7 @@
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19689119" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2738712" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Messages" weight="0.3297587" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
@@ -289,8 +302,8 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.31367293" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.30563003" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.2627346" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -310,17 +323,17 @@
       <window_info id="UI Designer" order="2" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.19689119" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.19689119" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="1" />
       <window_info anchor="bottom" id="Terminal" order="2" weight="0.3297587" />
       <window_info anchor="bottom" id="Database Changes" order="3" />
       <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="5" />
+      <window_info anchor="bottom" id="Messages" order="5" weight="0.3297587" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" />
-      <window_info anchor="bottom" id="Run" order="8" visible="true" weight="0.31367293" />
+      <window_info active="true" anchor="bottom" id="Run" order="8" visible="true" weight="0.2386059" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
@@ -375,27 +388,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/Bank.java">
+    <entry file="file://$PROJECT_DIR$/init.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="30">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/Main.java">
+    <entry file="jar:///usr/lib/jvm/java-12-oracle/lib/src.zip!/java.rmi/sun/rmi/server/Util.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="180">
+          <caret line="142" column="38" selection-start-line="142" selection-start-column="38" selection-end-line="142" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/Person.java">
+    <entry file="jar:///usr/lib/jvm/java-12-oracle/lib/src.zip!/java.rmi/sun/rmi/server/UnicastServerRef.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-380">
+          <caret line="222" column="65" selection-start-line="222" selection-start-column="65" selection-end-line="222" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-12-oracle/lib/src.zip!/java.rmi/java/rmi/server/UnicastRemoteObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="469" column="20" selection-start-line="469" selection-start-column="20" selection-end-line="469" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/LocalAccount.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -406,75 +430,110 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/LocalPerson.java">
+    <entry file="file://$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/Person.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="e#163#164#0" expanded="true" />
-            <element signature="e#190#191#0" expanded="true" />
-            <element signature="e#238#239#0" expanded="true" />
-            <element signature="e#265#266#0" expanded="true" />
-            <element signature="e#321#322#0" expanded="true" />
-            <element signature="e#348#349#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/RemotePerson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-          <folding>
-            <element signature="e#153#154#0" expanded="true" />
-            <element signature="e#180#181#0" expanded="true" />
-            <element signature="e#228#229#0" expanded="true" />
-            <element signature="e#255#256#0" expanded="true" />
-            <element signature="e#311#312#0" expanded="true" />
-            <element signature="e#338#339#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+          <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/Client.java">
+    <entry file="file://$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/LocalPerson.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="11" column="60" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="60" />
+        <state relative-caret-position="72">
+          <caret line="55" column="16" lean-forward="true" selection-start-line="55" selection-start-column="16" selection-end-line="55" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/RemoteAccount.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+        <state relative-caret-position="237">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/NormalPerson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="81" lean-forward="true" selection-start-line="7" selection-start-column="81" selection-end-line="7" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/Bank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="4" lean-forward="true" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/RemotePerson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="16" column="18" lean-forward="true" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/PersonClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="52" column="36" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/RemoteBank.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="29" column="49" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
+        <state relative-caret-position="196">
+          <caret line="38" column="29" lean-forward="true" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
           <folding>
-            <element signature="e#1353#1354#0" expanded="true" />
-            <element signature="e#1379#1380#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#513#514#0" expanded="true" />
+            <element signature="e#545#546#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/init.sh">
+    <entry file="file://$PROJECT_DIR$/src/ru/ifmo/rain/utusikov/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        <state relative-caret-position="225">
+          <caret line="18" column="51" lean-forward="true" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
         </state>
       </provider>
     </entry>
