@@ -32,20 +32,34 @@ public class RemoteBank implements Bank {
         return accounts.get(id);
     }
 
-    public Person savePerson(final String name, final String surname, final String passport) throws RemoteException {
+    public Person savePerson(final String name, final String surname, final String passport, final String mode) throws RemoteException {
         System.out.println("Saving new user " + passport);
-        final Person curPerson = new RemotePerson(name, surname, passport);
-        if (persons.putIfAbsent(curPerson.getPassport(), curPerson) == null) {
-            UnicastRemoteObject.exportObject(curPerson, port);
-            System.out.println("Saved!");
-            return curPerson;
+        if (mode.equals("remote")) {
+            final Person curPerson = new RemotePerson(name, surname, passport);
+            if (persons.putIfAbsent(curPerson.getPassport(), curPerson) == null) {
+                UnicastRemoteObject.exportObject(curPerson, port);
+                System.out.println("Saved!");
+                return curPerson;
+            } else {
+                return getPerson(passport, mode);
+            }
         } else {
-            return getPerson(passport);
+            return null;
         }
     }
 
-    public Person getPerson(final String passport) throws RemoteException {
+    public Person getPerson(final String passport, final String mode) throws RemoteException {
         System.out.println("Retrieving person " + passport);
-        return persons.get(passport);
+        final Person curPerson = persons.get(passport);
+        if (curPerson == null) {
+            return null;
+        }
+        if (mode.equals("remote")) {
+            return curPerson;
+        } else if (mode.equals("local")) {
+            return new LocalPerson(curPerson.getName(), curPerson.getSurname(), curPerson.getPassport());
+        } else {
+            return null;
+        }
     }
 }

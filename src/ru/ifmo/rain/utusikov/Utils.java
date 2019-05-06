@@ -6,8 +6,8 @@ import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 
-class Utils {
-    static <T> T get(String address) {
+public class Utils {
+    public static <T> T get(String address) {
         T obj;
         try {
             obj = (T) Naming.lookup(address);

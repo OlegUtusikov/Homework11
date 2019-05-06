@@ -15,7 +15,7 @@ public class PersonClient {
                 return;
             }
         }
-        final String mod = args[5];
+        final String mode = args[5];
         final String name = args[0];
         final String surname = args[1];
         final String passport = args[2];
@@ -27,7 +27,7 @@ public class PersonClient {
             System.err.println("Incorrect format of money!");
             return;
         }
-        System.out.println(name + " " + surname + " " + passport + " " + accountId + " " + moneyDelta + " " + mod);
+        System.out.println(name + " " + surname + " " + passport + " " + accountId + " " + moneyDelta + " " + mode);
         Bank bank = Utils.get("//localhost/bank");
         if (bank == null) {
             System.err.println("Error with connecting bank!");
@@ -36,27 +36,15 @@ public class PersonClient {
 
         Person curPerson;
         try {
-            curPerson = bank.getPerson(passport);
+            curPerson = bank.getPerson(passport, mode);
         } catch (RemoteException e) {
             System.err.println("Can't remote person!");
             return;
         }
 
-        if (mod.equals("local") && curPerson != null) {
-            try {
-                curPerson = new LocalPerson(curPerson.getName(), curPerson.getSurname(), curPerson.getPassport());
-            } catch (RemoteException e) {
-                System.err.println("Error!");
-            }
-            System.out.println("local space");
-        } else if (mod.equals("local")) {
-            System.out.println("Can't create a local user!");
-            return;
-        }
-
         if (curPerson == null) {
             try {
-                curPerson = bank.savePerson(name, surname, passport);
+                curPerson = bank.savePerson(name, surname, passport, mode);
             } catch (RemoteException e) {
                 System.err.println("Can't save a new person with passport " + passport);
             }

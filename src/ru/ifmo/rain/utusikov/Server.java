@@ -6,7 +6,12 @@ import java.net.*;
 
 public class Server {
     private final static int PORT = 8888;
-    public static void main(final String... args) {
+
+    public Server() {
+        bind();
+    }
+
+    private static void bind() {
         final Bank bank = new RemoteBank(PORT);
         try {
             UnicastRemoteObject.exportObject(bank, PORT);
@@ -18,5 +23,9 @@ public class Server {
             System.out.println("Malformed URL");
         }
         System.out.println("Server started");
+    }
+
+    public static void main(final String... args) {
+        bind();
     }
 }
