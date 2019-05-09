@@ -4,7 +4,7 @@ import java.rmi.RemoteException;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-public class LocalPerson extends NormalPerson {
+public class LocalPerson extends AbstractPerson {
     private static final long serialVersionUID = 1L;
     private ConcurrentMap<String, Account> accounts;
 

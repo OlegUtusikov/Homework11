@@ -2,12 +2,12 @@ package ru.ifmo.rain.utusikov;
 
 import java.rmi.RemoteException;
 
-public  abstract  class NormalPerson implements Person {
+public  abstract  class AbstractPerson implements Person {
     private String name;
     private String surname;
     private String passport;
 
-    NormalPerson(final String name, final String surname, final String passport) {
+    AbstractPerson(final String name, final String surname, final String passport) {
         this.name = name;
         this.passport = passport;
         this.surname = surname;

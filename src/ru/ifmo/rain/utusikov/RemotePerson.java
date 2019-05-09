@@ -3,7 +3,7 @@ package ru.ifmo.rain.utusikov;
 
 import java.rmi.RemoteException;
 
-public class RemotePerson extends NormalPerson {
+public class RemotePerson extends AbstractPerson {
 
     RemotePerson(String name, String surname, String passport) {
         super(name, surname, passport);

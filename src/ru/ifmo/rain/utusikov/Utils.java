@@ -25,7 +25,7 @@ public class Utils {
         return obj;
     }
 
-    static <T> T copy(T obj) {
+    public static <T extends Serializable> T copy(T obj) {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         ObjectOutputStream oos;
 

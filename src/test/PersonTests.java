@@ -73,11 +73,10 @@ public class PersonTests {
         System.out.println(5);
         final Bank bank = Utils.get("//localhost/bank");
         assertNotNull(bank);
-        List<Person> personList = new ArrayList<>();
         for(int i = 0; i < 15; i++) {
             final String ID = Integer.toString(i);
             try {
-                personList.add(bank.savePerson(ID, ID, ID, "remote"));
+                bank.savePerson(ID, ID, ID, "remote");
             } catch (RemoteException e) {
                 e.printStackTrace();
             }
@@ -88,7 +87,7 @@ public class PersonTests {
             try {
                 localPersons.add(bank.getPerson(ID, "local"));
                 assertNull(bank.getAccount(ID + ":" + ID));
-                personList.get(i).getAccount(ID, bank);
+                bank.getPerson(ID, "remote").getAccount(ID, bank);
                 localPersons.get(i).changeAccount(ID, 255, bank);
                 assertEquals(255, localPersons.get(i).getAccount(ID, bank).getAmount());
                 assertEquals(0, bank.getAccount(ID + ":" + ID).getAmount());
@@ -99,11 +98,25 @@ public class PersonTests {
         for(int i = 0; i < 15; i++) {
             final String ID = Integer.toString(i);
             try {
-                personList.get(i).changeAccount(ID, 100, bank);
+                bank.getPerson(ID, "remote").changeAccount(ID, 100, bank);
                 assertEquals(100, bank.getAccount(ID + ":" + ID).getAmount());
                 assertEquals(255, localPersons.get(i).getAccount(ID, bank).getAmount());
             } catch (RemoteException ignored) {
             }
+        }
+    }
+    @Test
+    public void test6() {
+        System.out.println(6);
+        final Bank bank = Utils.get("//localhost/bank");
+        try {
+            bank.savePerson("Oleg", "Utusikov", "123", "remote");
+            Person person = bank.getPerson("123", "local");
+            Person copyPerson = Utils.copy(person);
+            assertEquals(copyPerson.getName(), person.getName());
+            assertEquals(copyPerson.getSurname(), person.getSurname());
+            assertEquals(copyPerson.getPassport(), person.getPassport());
+        } catch (RemoteException e) {
         }
     }
 }
