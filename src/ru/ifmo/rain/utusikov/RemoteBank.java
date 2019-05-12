@@ -31,17 +31,13 @@ public class RemoteBank implements Bank {
         return accounts.get(id);
     }
 
-    public Person savePerson(final String name, final String surname, final String passport, final String mode) throws RemoteException {
-        if (mode.equals("remote")) {
-            final Person curPerson = new RemotePerson(name, surname, passport);
-            if (persons.putIfAbsent(curPerson.getPassport(), curPerson) == null) {
-                UnicastRemoteObject.exportObject(curPerson, port);
-                return curPerson;
-            } else {
-                return getPerson(passport, mode);
-            }
+    public Person savePerson(final String name, final String surname, final String passport) throws RemoteException {
+        final Person curPerson = new RemotePerson(name, surname, passport);
+        if (persons.putIfAbsent(curPerson.getPassport(), curPerson) == null) {
+            UnicastRemoteObject.exportObject(curPerson, port);
+            return curPerson;
         } else {
-            return null;
+            return getPerson(passport, "remote");
         }
     }
 

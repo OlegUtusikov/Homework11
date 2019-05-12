@@ -50,7 +50,7 @@ public class PersonClient {
 
         if (curPerson == null) {
             try {
-                curPerson = bank.savePerson(name, surname, passport, mode);
+                curPerson = bank.savePerson(name, surname, passport);
             } catch (RemoteException e) {
                 System.err.println("Can't save a new person with passport " + passport);
             }

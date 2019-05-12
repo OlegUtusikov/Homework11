@@ -38,7 +38,7 @@ public class PersonTests {
         }
         assertNotNull(bank);
         try {
-            assertNotNull(bank.savePerson("oleg", "2", "3", "remote"));
+            assertNotNull(bank.savePerson("oleg", "2", "3"));
         } catch (RemoteException ignored) {
         }
     }
@@ -54,7 +54,7 @@ public class PersonTests {
         assertNotNull(bank);
         Person  person = null;
         try {
-            person = bank.savePerson("oleg", "2", "3", "remote");
+            person = bank.savePerson("oleg", "2", "3");
         } catch (RemoteException ignored) {
         }
         try {
@@ -76,7 +76,7 @@ public class PersonTests {
         for(int i = 0; i < 10; i++) {
             final String ID = Integer.toString(i);
             try {
-                personList.add(bank.savePerson(ID, ID, ID, "remote"));
+                personList.add(bank.savePerson(ID, ID, ID));
                 personList.get(i).changeAccount(ID, 100, bank);
                 assertEquals(100, personList.get(i).getAccount(ID, bank).getAmount());
                 assertEquals(100, bank.getAccount(ID + ":" + ID).getAmount());
@@ -97,7 +97,7 @@ public class PersonTests {
         for(int i = 0; i < 15; i++) {
             final String ID = Integer.toString(i);
             try {
-                bank.savePerson(ID, ID, ID, "remote");
+                bank.savePerson(ID, ID, ID);
             } catch (RemoteException e) {
                 e.printStackTrace();
             }
@@ -137,7 +137,7 @@ public class PersonTests {
         }
         assertNotNull(bank);
         try {
-            bank.savePerson("Oleg", "Utusikov", "123", "remote");
+            bank.savePerson("Oleg", "Utusikov", "123");
             Person person = bank.getPerson("123", "local");
             Person copyPerson = Utils.copy(person);
             assertEquals(copyPerson.getName(), person.getName());
@@ -156,7 +156,7 @@ public class PersonTests {
             e.printStackTrace();
         }
         try {
-            bank.savePerson("oleg", "utusikov", "1", "remote");
+            bank.savePerson("oleg", "utusikov", "1");
             Person personRemote1 = bank.getPerson("1", "remote");
             Person personLocal1 = bank.getPerson("1", "local");
             personRemote1.changeAccount("1", 100, bank);
