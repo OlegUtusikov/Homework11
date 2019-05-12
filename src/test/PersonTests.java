@@ -11,10 +11,15 @@ import static org.junit.Assert.*;
 
 public class PersonTests {
     Server server = new Server();
+
     @Test
-    public void test1() {
-        System.out.println(1);
-        final Bank bank = Utils.get("//localhost/bank");
+    public void createBankTest() {
+        Bank bank = null;
+        try {
+            bank = Utils.get("//localhost/bank");
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
         assertNotNull(bank);
         try {
             assertNull(bank.getPerson("id", "local"));
@@ -24,9 +29,13 @@ public class PersonTests {
 
 
     @Test
-    public void test2() {
-        System.out.println(2);
-        final Bank bank = Utils.get("//localhost/bank");
+    public void saveRemotePersonTest() {
+        Bank bank = null;
+        try {
+            bank = Utils.get("//localhost/bank");
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
         assertNotNull(bank);
         try {
             assertNotNull(bank.savePerson("oleg", "2", "3", "remote"));
@@ -35,9 +44,13 @@ public class PersonTests {
     }
 
     @Test
-    public void test3() {
-        System.out.println(3);
-        final Bank bank = Utils.get("//localhost/bank");
+    public void getRemotePersonTest() {
+        Bank bank = null;
+        try {
+            bank = Utils.get("//localhost/bank");
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
         assertNotNull(bank);
         Person  person = null;
         try {
@@ -51,9 +64,13 @@ public class PersonTests {
     }
 
     @Test
-    public void test4() {
-        System.out.println(4);
-        final Bank bank = Utils.get("//localhost/bank");
+    public void createAndChangeAccountRemotePersonTest() {
+        Bank bank = null;
+        try {
+            bank = Utils.get("//localhost/bank");
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
         assertNotNull(bank);
         List<Person> personList = new ArrayList<>();
         for(int i = 0; i < 10; i++) {
@@ -69,9 +86,13 @@ public class PersonTests {
     }
 
     @Test
-    public void test5() {
-        System.out.println(5);
-        final Bank bank = Utils.get("//localhost/bank");
+    public void changeAccountLocalPersonsTest() {
+        Bank bank = null;
+        try {
+            bank = Utils.get("//localhost/bank");
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
         assertNotNull(bank);
         for(int i = 0; i < 15; i++) {
             final String ID = Integer.toString(i);
@@ -105,10 +126,16 @@ public class PersonTests {
             }
         }
     }
+
     @Test
-    public void test6() {
-        System.out.println(6);
-        final Bank bank = Utils.get("//localhost/bank");
+    public void serializationTest() {
+        Bank bank = null;
+        try {
+            bank = Utils.get("//localhost/bank");
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        assertNotNull(bank);
         try {
             bank.savePerson("Oleg", "Utusikov", "123", "remote");
             Person person = bank.getPerson("123", "local");
@@ -118,5 +145,28 @@ public class PersonTests {
             assertEquals(copyPerson.getPassport(), person.getPassport());
         } catch (RemoteException e) {
         }
+    }
+
+    @Test
+    public void  localPersonsTestBeforeAndAfter() {
+        Bank bank = null;
+        try {
+            bank = Utils.get("//localhost/bank");
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        try {
+            bank.savePerson("oleg", "utusikov", "1", "remote");
+            Person personRemote1 = bank.getPerson("1", "remote");
+            Person personLocal1 = bank.getPerson("1", "local");
+            personRemote1.changeAccount("1", 100, bank);
+            Person personLocal2 = bank.getPerson("1", "local");
+            assertEquals(0, personLocal1.getAccount("1", bank).getAmount());
+            assertEquals(100, personLocal2.getAccount("1", bank).getAmount());
+
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        assertNotNull(bank);
     }
 }

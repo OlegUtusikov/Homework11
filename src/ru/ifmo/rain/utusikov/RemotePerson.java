@@ -10,28 +10,22 @@ public class RemotePerson extends AbstractPerson {
     }
 
     public synchronized Account getAccount(final String id, final Bank bank) throws RemoteException {
-        final String ID = this.getPassport() + ":" + id;
         try {
-            Account account = bank.getAccount(ID);
+            Account account = bank.getAccount(Utils.makeId(id, this));
             if (account == null) {
-                System.out.println("Saving account!");
                 account = saveAccount(id, bank);
             }
             return account;
         } catch (RemoteException e) {
-            System.err.println("Can't remote account!");
-            return null;
+            throw new RemoteException("Can't remote account!");
         }
     }
 
     private synchronized Account saveAccount(final String id, final Bank bank) throws RemoteException {
-        final String ID = this.getPassport() + ":" + id;
         try {
-            bank.createAccount(ID);
-            return bank.getAccount(ID);
+            return bank.createAccount(Utils.makeId(id, this));
         } catch (RemoteException e) {
-            System.err.println("Can't save account with id " + ID + "!");
-            return null;
+            throw new RemoteException("Can't save account with id " + Utils.makeId(id, this) + "!");
         }
     }
 
@@ -40,7 +34,7 @@ public class RemotePerson extends AbstractPerson {
         try {
             account.setAmount(account.getAmount() + delta);
         } catch (RemoteException e) {
-            System.err.println("Couldn't change amount!");
+            throw new RemoteException("Couldn't change amount!");
         }
     }
 }

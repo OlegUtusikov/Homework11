@@ -2,6 +2,7 @@ package ru.ifmo.rain.utusikov;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
@@ -17,7 +18,6 @@ public class RemoteBank implements Bank {
     }
 
     public Account createAccount(final String id) throws RemoteException {
-        System.out.println("Creating account " + id);
         final Account account = new RemoteAccount(id);
         if (accounts.putIfAbsent(id, account) == null) {
             UnicastRemoteObject.exportObject(account, port);
@@ -28,17 +28,14 @@ public class RemoteBank implements Bank {
     }
 
     public Account getAccount(final String id) throws RemoteException {
-        System.out.println("Retrieving account " + id);
         return accounts.get(id);
     }
 
     public Person savePerson(final String name, final String surname, final String passport, final String mode) throws RemoteException {
-        System.out.println("Saving new user " + passport);
         if (mode.equals("remote")) {
             final Person curPerson = new RemotePerson(name, surname, passport);
             if (persons.putIfAbsent(curPerson.getPassport(), curPerson) == null) {
                 UnicastRemoteObject.exportObject(curPerson, port);
-                System.out.println("Saved!");
                 return curPerson;
             } else {
                 return getPerson(passport, mode);
@@ -49,7 +46,6 @@ public class RemoteBank implements Bank {
     }
 
     public Person getPerson(final String passport, final String mode) throws RemoteException {
-        System.out.println("Retrieving person " + passport);
         final Person curPerson = persons.get(passport);
         if (curPerson == null) {
             return null;
@@ -57,7 +53,14 @@ public class RemoteBank implements Bank {
         if (mode.equals("remote")) {
             return curPerson;
         } else if (mode.equals("local")) {
-            return new LocalPerson(curPerson.getName(), curPerson.getSurname(), curPerson.getPassport());
+            Person local = new LocalPerson(curPerson.getName(), curPerson.getSurname(), curPerson.getPassport());
+            for(Map.Entry<String, Account> accountEntry : accounts.entrySet()) {
+                if (accountEntry.getKey().startsWith(passport)) {
+                    String[] ids = accountEntry.getKey().split(":");
+                    local.changeAccount(ids[1], accountEntry.getValue().getAmount(), this);
+                }
+            }
+            return  local;
         } else {
             return null;
         }

@@ -13,6 +13,10 @@ public class ServerTests {
     @Test
     public void test1() {
         Server server = new Server();
-        assertNotNull((Bank) Utils.get("//localhost/bank"));
+        try {
+            assertNotNull((Bank) Utils.get("//localhost/bank"));
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -14,37 +14,21 @@ public class LocalPerson extends AbstractPerson {
     }
 
     public Account getAccount(final String id, final Bank bank) throws RemoteException {
-        final String ID = this.getPassport() + ":" + id;
-        if (accounts.containsKey(ID)) {
-            return accounts.get(ID);
+        if (accounts.containsKey(Utils.makeId(id, this))) {
+            return accounts.get(Utils.makeId(id, this));
         } else {
             try {
-                Account account = bank.getAccount(ID);
-                Account newAccount;
-                if (account == null) {
-                    newAccount = new RemoteAccount(ID);
-                } else {
-                    newAccount = new RemoteAccount(account);
-                }
-                accounts.put(ID, newAccount);
+                Account newAccount = new RemoteAccount(Utils.makeId(id, this));
+                accounts.put(Utils.makeId(id, this), newAccount);
                 return newAccount;
             } catch (RemoteException e) {
-                System.err.println("Can't remote account!");
-                return null;
+                throw new RemoteException("Can't remote account!");
             }
         }
     }
 
     public void changeAccount(final String id, final int delta, final Bank bank) throws RemoteException {
         Account account = getAccount(id, bank);
-        if (account == null) {
-            return;
-        }
-        try {
-            // link ? value
-            account.setAmount(account.getAmount() + delta);
-        } catch (RemoteException e) {
-            System.err.println("Couldn't change amount!");
-        }
+        account.setAmount(account.getAmount() + delta);
     }
 }

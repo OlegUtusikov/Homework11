@@ -7,7 +7,7 @@ import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 
 public class Utils {
-    public static <T> T get(String address) {
+    public static <T> T get(String address) throws RemoteException {
         T obj;
         try {
             obj = (T) Naming.lookup(address);
@@ -25,7 +25,7 @@ public class Utils {
         return obj;
     }
 
-    public static <T extends Serializable> T copy(T obj) {
+    public static <T extends Serializable> T copy(T obj) throws  RemoteException {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         ObjectOutputStream oos;
 
@@ -59,5 +59,9 @@ public class Utils {
             e.printStackTrace();
             return null;
         }
+    }
+
+    public static String makeId(String id, Person person) throws RemoteException{
+        return person.getPassport()  + ":" + id;
     }
 }

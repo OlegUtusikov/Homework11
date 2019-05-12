@@ -15,11 +15,11 @@ public class PersonClient {
                 return;
             }
         }
-        final String mode = args[5];
         final String name = args[0];
         final String surname = args[1];
         final String passport = args[2];
         final String accountId = args[3];
+        final String mode = args[5];
         final int moneyDelta;
         try {
             moneyDelta = Integer.parseInt(args[4]);
@@ -28,7 +28,13 @@ public class PersonClient {
             return;
         }
         System.out.println(name + " " + surname + " " + passport + " " + accountId + " " + moneyDelta + " " + mode);
-        Bank bank = Utils.get("//localhost/bank");
+        Bank bank;
+        try {
+            bank = Utils.get("//localhost/bank");
+        } catch (RemoteException e) {
+            System.err.println("Can't get a bank!");
+            return;
+        }
         if (bank == null) {
             System.err.println("Error with connecting bank!");
             return;
