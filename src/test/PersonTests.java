@@ -169,4 +169,27 @@ public class PersonTests {
         }
         assertNotNull(bank);
     }
+
+    @Test
+    public void  localPersonsBetweenTest() {
+        Bank bank = null;
+        try {
+            bank = Utils.get("//localhost/bank");
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        try {
+            bank.savePerson("oleg", "utusikov", "1");
+            Person personRemote1 = bank.getPerson("1", "remote");
+            Person personLocal1 = bank.getPerson("1", "local");
+            personRemote1.changeAccount("1", 100, bank);
+            Person personLocal2 = bank.getPerson("1", "local");
+            personLocal1.changeAccount("2", 300, bank);
+            assertEquals(300, personLocal1.getAccount("2", bank).getAmount());
+            assertEquals(100, personLocal2.getAccount("1", bank).getAmount());
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        assertNotNull(bank);
+    }
 }
